@@ -2,7 +2,6 @@ import User from "../models/user.model.js";
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken'
 
-
 export const NewUserRegistration = async (req, res) => {
     try {
         const { fullname, phoneNumber, email, password, role } = req.body;
@@ -163,6 +162,7 @@ export const UpdateProfile = async (req, res) => {
             email: user.email,
             bio: user.bio,
             profile: user.profile
+            
         }
         console.log(user)
         return res.status(200).json({
@@ -179,3 +179,5 @@ export const UpdateProfile = async (req, res) => {
         })
     }
 }
+
+

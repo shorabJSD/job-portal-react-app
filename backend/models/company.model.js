@@ -6,11 +6,10 @@ const companySchema = new Schema({
   name: {
     type: String,
     required: true,
-    trim: true,
+    unique: true
   },
   description: {
     type: String,
-    required: true,
   },
   website: {
     type: String,
@@ -18,14 +17,13 @@ const companySchema = new Schema({
   },
   location: {
     type: String,
-    required: true,
   },
   logo: {
     type: String, // URL or path to the logo image
   },
   userId: {
     type: mongoose.Schema.Types.ObjectId,
- ref: 'User', // Reference to the User model (assumed that the user model is named 'User')
+    ref: 'User', // Reference to the User model (assumed that the user model is named 'User')
     required: true,
   },
 }, {
@@ -34,4 +32,4 @@ const companySchema = new Schema({
 
 // Create and export the Company model
 const Company = mongoose.model('Company', companySchema);
-module.exports = Company;
+export default Company;

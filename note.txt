@@ -1,0 +1,2 @@
+shortcute;
+select all text : shift + ctrl      and up and down arrow button;

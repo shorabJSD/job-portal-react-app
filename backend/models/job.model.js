@@ -15,6 +15,10 @@ const jobSchema = new Schema({
     type:String,
     required:true
   }],
+  experienceLevel:{
+    type:String,
+    required:true
+  },
   salary: {
     type: Number, // Store salary as a number (could be yearly, monthly, etc.)
     required:true,
@@ -25,11 +29,13 @@ const jobSchema = new Schema({
   },
   jobType: {
     type: String,
-    enum: ['full-time', 'part-time', 'contract', 'internship'], // Example job types, customize as needed
-    default: 'full-time',
     required:true,
   },
   position: {
+    type: String, // The position or job title within the company
+    required: true,
+  },
+  qualification: {
     type: String, // The position or job title within the company
     required: true,
   },
@@ -55,4 +61,4 @@ const jobSchema = new Schema({
 
 // Create and export the Job model
 const Job = mongoose.model('Job', jobSchema);
-module.exports = Job;
+export default Job;

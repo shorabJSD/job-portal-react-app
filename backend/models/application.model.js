@@ -24,4 +24,4 @@ const applicationSchema = new Schema({
 
 // Create and export the Application model
 const Application = mongoose.model('Application', applicationSchema);
-module.exports = Application;
+export default Application;
